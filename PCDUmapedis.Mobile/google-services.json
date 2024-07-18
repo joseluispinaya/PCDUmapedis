@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "933674219450",
+    "project_id": "appnotif-754f0",
+    "storage_bucket": "appnotif-754f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933674219450:android:dd36e05384ff1a10bacf83",
+        "android_client_info": {
+          "package_name": "com.companyname.pcdumapedis.mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFzIe3Esq7AFx2xdKdcsdmRVs7zjGeMrc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
