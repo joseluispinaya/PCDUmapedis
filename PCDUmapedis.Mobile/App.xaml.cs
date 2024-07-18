@@ -1,4 +1,6 @@
-﻿namespace PCDUmapedis.Mobile
+﻿using PCDUmapedis.Mobile.Views.Startup;
+
+namespace PCDUmapedis.Mobile
 {
     public partial class App : Application
     {
@@ -6,7 +8,8 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new LoginView();
+            //MainPage = new AppShell();
         }
     }
 }
