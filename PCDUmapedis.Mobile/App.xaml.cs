@@ -1,4 +1,5 @@
-﻿using PCDUmapedis.Mobile.Views.Startup;
+﻿using PCDUmapedis.Mobile.Views.Dashboard;
+using PCDUmapedis.Mobile.Views.Startup;
 
 namespace PCDUmapedis.Mobile
 {
@@ -8,7 +9,7 @@ namespace PCDUmapedis.Mobile
         {
             InitializeComponent();
 
-            MainPage = new LoginView();
+            MainPage = new InicioView();
             //MainPage = new AppShell();
         }
     }

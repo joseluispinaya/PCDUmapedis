@@ -44,6 +44,8 @@
 	<ItemGroup>
 	  <None Remove="google-services.json" />
 	  <None Remove="Platforms\Android\Resources\values\strings.xml" />
+	  <None Remove="Resources\Images\act1.jpg" />
+	  <None Remove="Resources\Images\imafondo.jpg" />
 	  <None Remove="Resources\Images\lock.png" />
 	  <None Remove="Resources\Images\logo1.png" />
 	  <None Remove="Resources\Images\user.png" />
@@ -59,6 +61,7 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="Plugin.Firebase" Version="2.0.10" />
 		<PackageReference Include="Plugin.Firebase.Crashlytics" Version="2.0.2" />
+		<PackageReference Include="PropertyChanged.Fody" Version="4.1.0" PrivateAssets="All" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
@@ -68,10 +71,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="ViewModels\Startup\" />
-	</ItemGroup>
-
-	<ItemGroup>
+	  <MauiXaml Update="Views\Dashboard\InicioView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Startup\LoginView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
