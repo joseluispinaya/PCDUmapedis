@@ -9,9 +9,9 @@
     Title="PCDUmapedis.Mobile">
 
     <ShellContent
-        Title="Inicio"
-        ContentTemplate="{DataTemplate dashboardPages:InicioView}"
-        Route="InicioView" />
+        Title="Consultas"
+        ContentTemplate="{DataTemplate dashboardPages:ConsultaBonoView}"
+        Route="ConsultaBonoView" />
 
     <ShellContent
         Title="Home"

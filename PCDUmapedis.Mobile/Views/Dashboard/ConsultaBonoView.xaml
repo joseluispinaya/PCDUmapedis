@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PCDUmapedis.Mobile.Views.Dashboard.ConsultaBonoView"
+             Title="ConsultaBonoView"
+             BackgroundColor="#100F1F">
+
+    <Grid RowDefinitions="Auto, Auto, *">
+        <Border StrokeShape="RoundRectangle 0, 0, 30, 30"
+            Opacity="0.6" BackgroundColor="#100F1F"
+            StrokeThickness="0" HeightRequest="80">
+            <Image Source="appbono.jpg" Aspect="Fill"/>
+        </Border>
+
+        <Grid>
+            <Grid Margin="0, 8, 110, 0" VerticalOptions="Start">
+
+                <ImageButton Source="logo1.png" WidthRequest="50" HeightRequest="50"
+                             HorizontalOptions="End"/>
+            </Grid>
+
+        </Grid>
+
+        <VerticalStackLayout Grid.Row="1">
+            <Grid ColumnDefinitions="*, Auto" Margin="20, 8">
+                <Frame HeightRequest="50"
+                       CornerRadius="50" Margin="10" Padding="0" BackgroundColor="#EFF6FF">
+                    <Picker Title="Seleccione Gestion" Margin="6, 0" TitleColor="Black" FontAttributes="Bold">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Opción 1</x:String>
+                                <x:String>Opción 2</x:String>
+                                <x:String>Opción 3</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Frame>
+
+                <ImageButton Grid.Column="1" Source="filter.png" Aspect="AspectFill" 
+                             WidthRequest="40" HeightRequest="40" Margin="30, 0, 0, 0"/>
+            </Grid>
+
+            <Label Text="Detalle de Pagos" FontSize="18" TextColor="#EFF6FF" HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="2"  Margin="25, 20">
+            <Grid ColumnDefinitions="Auto, *" 
+                        RowDefinitions="*, Auto" Grid.Row="1">
+                <Frame WidthRequest="110" HeightRequest="110"
+                               CornerRadius="10" Padding="0" VerticalOptions="Center">
+
+                    <Grid>
+                        <Image Source="logo1.png" Aspect="AspectFill"/>
+                    </Grid>
+                </Frame>
+
+                <VerticalStackLayout Grid.Column="1" Margin="20, 0, 10, 0" Spacing="8">
+                    <Label Text="Enero" TextColor="#EFF6FF"
+                                   FontSize="16"/>
+
+                    <Label Text="fecha de pago"
+                                   TextColor="#9497A8"
+                                   FontSize="12"/>
+                    
+                    <Label Text="Cajero: Jose Luis Pinaya" 
+                           TextColor="#EFF6FF"
+                            FontSize="14"/>
+
+                    <Grid>
+                        <Label Text="2500 bs"
+                                       TextColor="#EFF6FF"
+                                       FontSize="14"/>
+
+                        <Button Text="Ver Detalle" BackgroundColor="#FF4F4F" TextColor="White"
+                                        WidthRequest="70" HeightRequest="25" Padding="0"
+                                        CornerRadius="20" FontSize="10" HorizontalOptions="End"/>
+                    </Grid>
+                </VerticalStackLayout>
+
+                <BoxView Grid.ColumnSpan="2" Grid.Row="1" Margin="0, 15"
+                                 HeightRequest="1" Color="#9497A8"/>
+            </Grid>
+            <Grid ColumnDefinitions="Auto, *" 
+                        RowDefinitions="*, Auto" Grid.Row="1">
+                <Frame WidthRequest="110" HeightRequest="110"
+                               CornerRadius="10" Padding="0" VerticalOptions="Center">
+
+                    <Grid>
+                        <Image Source="logo1.png" Aspect="AspectFill"/>
+                    </Grid>
+                </Frame>
+
+                <VerticalStackLayout Grid.Column="1" Margin="20, 0, 10, 0" Spacing="8">
+                    <Label Text="Enero" TextColor="#EFF6FF"
+                                   FontSize="16"/>
+
+                    <Label Text="fecha de sddssdssdsdsd"
+                                   TextColor="#9497A8"
+                                   FontSize="12"/>
+
+                    <Label Text="Cajero: Amador Lara" 
+                           TextColor="#EFF6FF"
+                            FontSize="14"/>
+
+                    <Grid>
+                        <Label Text="2500 bs"
+                                       TextColor="#EFF6FF"
+                                       FontSize="14"/>
+
+                        <Button Text="Ver Detalle" BackgroundColor="#FF4F4F" TextColor="White"
+                                        WidthRequest="70" HeightRequest="25" Padding="0"
+                                        CornerRadius="20" FontSize="10" HorizontalOptions="End"/>
+                    </Grid>
+                </VerticalStackLayout>
+
+                <BoxView Grid.ColumnSpan="2" Grid.Row="1" Margin="0, 15"
+                                 HeightRequest="1" Color="#9497A8"/>
+            </Grid>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

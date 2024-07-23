@@ -45,6 +45,8 @@
 	  <None Remove="google-services.json" />
 	  <None Remove="Platforms\Android\Resources\values\strings.xml" />
 	  <None Remove="Resources\Images\act1.jpg" />
+	  <None Remove="Resources\Images\appbono.jpg" />
+	  <None Remove="Resources\Images\filter.png" />
 	  <None Remove="Resources\Images\imafondo.jpg" />
 	  <None Remove="Resources\Images\lock.png" />
 	  <None Remove="Resources\Images\logo1.png" />
@@ -71,6 +73,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\Dashboard\ConsultaBonoView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Dashboard\InicioView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
