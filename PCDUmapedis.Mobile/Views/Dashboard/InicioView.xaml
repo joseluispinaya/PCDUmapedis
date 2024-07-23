@@ -4,10 +4,121 @@
              x:Class="PCDUmapedis.Mobile.Views.Dashboard.InicioView"
              Title="InicioView"
              BackgroundColor="#100F1F">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    
+    <Grid RowDefinitions="*, 2*">
+        <Border StrokeShape="RoundRectangle 0, 0, 30, 30"
+            Opacity="0.6" BackgroundColor="#100F1F"
+            StrokeThickness="0">
+            <Image Source="imafondo.jpg" Aspect="AspectFill"/>
+        </Border>
+
+        <VerticalStackLayout Grid.Row="1" Margin="20">
+            <Grid ColumnDefinitions="Auto, *">
+                <Label Text="Actividades" TextColor="#EFF6FF"
+                    FontSize="20"/>
+
+                <BoxView Grid.Column="1" HeightRequest="2"
+                        Color="#9497A8" VerticalOptions="End"
+                        Margin="20, 5, 0, 5"/>
+            </Grid>
+
+            <HorizontalStackLayout>
+                <VerticalStackLayout HorizontalOptions="Start" Margin="0, 25"
+                             Spacing="5">
+                                <Frame WidthRequest="100" HeightRequest="100"
+                   CornerRadius="15" Padding="0">
+                                    <Grid>
+                                        <Image Source="act1.jpg" Aspect="AspectFill"/>
+                                    </Grid>
+                                </Frame>
+
+                                <Label Text="Dia PCD" TextColor="#EFF6FF"
+                    FontSize="14"/>
+
+                                <Label Text="25/02/24" TextColor="#EFF6FF"
+                    FontSize="14"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout HorizontalOptions="Start" Margin="10, 25"
+                                     Spacing="5">
+                    <Frame WidthRequest="100" HeightRequest="100"
+                           CornerRadius="15" Padding="0">
+                        <Grid>
+                            <Image Source="act1.jpg" Aspect="AspectFill"/>
+                        </Grid>
+                    </Frame>
+
+                    <Label Text="Dia PCD" TextColor="#EFF6FF"
+                           FontSize="14"/>
+                    <Label Text="25/02/24" TextColor="#EFF6FF"
+                            FontSize="14"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout HorizontalOptions="Start" Margin="0, 25"
+                                     Spacing="5">
+                    <Frame WidthRequest="100" HeightRequest="100"
+                           CornerRadius="15" Padding="0">
+                        <Grid>
+                            <Image Source="act1.jpg" Aspect="AspectFill"/>
+                        </Grid>
+                    </Frame>
+
+                    <Label Text="Dia PCD" TextColor="#EFF6FF"
+                           FontSize="14"/>
+
+                    <Label Text="25/02/24" TextColor="#EFF6FF"
+                           FontSize="14"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <VerticalStackLayout HorizontalOptions="Start" Margin="0, 20"
+                 Spacing="5">
+                    <Frame WidthRequest="100" HeightRequest="100"
+       CornerRadius="15" Padding="0">
+                        <Grid>
+                            <Image Source="act1.jpg" Aspect="AspectFill"/>
+                        </Grid>
+                    </Frame>
+
+                    <Label Text="Dia PCD" TextColor="#EFF6FF"
+        FontSize="14"/>
+
+                    <Label Text="25/02/24" TextColor="#EFF6FF"
+        FontSize="14"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout HorizontalOptions="Start" Margin="10, 20"
+                         Spacing="5">
+                    <Frame WidthRequest="100" HeightRequest="100"
+               CornerRadius="15" Padding="0">
+                        <Grid>
+                            <Image Source="act1.jpg" Aspect="AspectFill"/>
+                        </Grid>
+                    </Frame>
+
+                    <Label Text="Dia PCD" TextColor="#EFF6FF"
+               FontSize="14"/>
+                    <Label Text="25/02/24" TextColor="#EFF6FF"
+                FontSize="14"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout HorizontalOptions="Start" Margin="0, 20"
+                         Spacing="5">
+                    <Frame WidthRequest="100" HeightRequest="100"
+               CornerRadius="15" Padding="0">
+                        <Grid>
+                            <Image Source="act1.jpg" Aspect="AspectFill"/>
+                        </Grid>
+                    </Frame>
+
+                    <Label Text="Dia PCD" TextColor="#EFF6FF"
+               FontSize="14"/>
+
+                    <Label Text="25/02/24" TextColor="#EFF6FF"
+               FontSize="14"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>

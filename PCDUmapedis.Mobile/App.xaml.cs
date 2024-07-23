@@ -9,8 +9,8 @@ namespace PCDUmapedis.Mobile
         {
             InitializeComponent();
 
-            MainPage = new InicioView();
-            //MainPage = new AppShell();
+            //MainPage = new InicioView();
+            MainPage = new AppShell();
         }
     }
 }

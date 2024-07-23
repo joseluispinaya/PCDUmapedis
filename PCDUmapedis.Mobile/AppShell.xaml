@@ -9,6 +9,11 @@
     Title="PCDUmapedis.Mobile">
 
     <ShellContent
+        Title="Inicio"
+        ContentTemplate="{DataTemplate dashboardPages:InicioView}"
+        Route="InicioView" />
+
+    <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
