@@ -1,4 +1,7 @@
-﻿using PCDUmapedis.Mobile.Views.Dashboard;
+﻿using PCDUmapedis.Mobile.Repositories;
+using PCDUmapedis.Mobile.Views.Dashboard;
+using PCDUmapedis.Shared.DTOs;
+using PCDUmapedis.Shared.Models;
 using PropertyChanged;
 using System;
 using System.Collections.Generic;
@@ -12,6 +15,12 @@ namespace PCDUmapedis.Mobile.ViewModels.Startup
     [AddINotifyPropertyChangedInterface]
     public class LoginViewModel
     {
+        private readonly IRepository _repository;
+        public LoginViewModel(IRepository repository)
+        {
+            _repository = repository;
+        }
+
         public string? Email { get; set; }
 
         public string? Password { get; set; }
@@ -31,16 +40,35 @@ namespace PCDUmapedis.Mobile.ViewModels.Startup
         private async Task KLoginCommandAsync()
         {
             IsRunning = true;
+            string url = "https://umapedis-001-site1.ftempurl.com/";
 
-            if (Email != "jo")
+            LoginDTO loginDTO = new LoginDTO
             {
-                IsRunning = false;
-                //App.Current?.MainPage?.DisplayAlert("Error", "En Usuario", "Ok");
-                await Shell.Current.DisplayAlert("Error", "En Usuario", "Ok");
+                Ciperso = "123456",
+                Codcarnetdisca = "111213"
+            };
+
+            var httpResponse = await _repository.GetPersoN<ResponsePCD>(url, "api/pagobonos/Login", loginDTO);
+            IsRunning = false;
+
+            if (httpResponse.Error)
+            {
+                var message = await httpResponse.GetErrorMessageAsync();
+                await Shell.Current.DisplayAlert("Error", message, "Ok");
                 return;
             }
-            IsRunning = false;
+
+            ResponsePCD responsePCD = httpResponse.Response;
+
             await Shell.Current.GoToAsync($"//{nameof(InicioView)}");
+
+            //if (Email != "jo")
+            //{
+            //    IsRunning = false;
+            //    await Shell.Current.DisplayAlert("Error", "En Usuario", "Ok");
+            //    return;
+            //}
+
         }
     }
 }

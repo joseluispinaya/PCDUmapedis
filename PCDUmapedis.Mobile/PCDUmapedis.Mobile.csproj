@@ -73,6 +73,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\PCDUmapedis.Shared\PCDUmapedis.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Views\Dashboard\ConsultaBonoView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

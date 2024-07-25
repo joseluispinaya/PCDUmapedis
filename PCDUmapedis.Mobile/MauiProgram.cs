@@ -6,6 +6,8 @@ using Microsoft.Maui.LifecycleEvents;
 using PCDUmapedis.Mobile.Views.Dashboard;
 using PCDUmapedis.Mobile.Views.Startup;
 using PCDUmapedis.Mobile.ViewModels.Startup;
+using PCDUmapedis.Mobile.Repositories;
+
 
 
 
@@ -31,6 +33,7 @@ namespace PCDUmapedis.Mobile
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<IRepository, Repository>();
             //Views
             builder.Services.AddTransient<MainPage>();
             builder.Services.AddTransient<LoginView>();
