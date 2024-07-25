@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PCDUmapedis.Mobile.Views.Startup.LoginView"
              Shell.NavBarIsVisible="False"
+             xmlns:Models="clr-namespace:PCDUmapedis.Mobile.ViewModels.Startup"
              Title="LoginView">
     <VerticalStackLayout
     Spacing="25"

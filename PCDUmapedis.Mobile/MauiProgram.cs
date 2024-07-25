@@ -3,6 +3,11 @@ using Plugin.Firebase.Bundled.Shared;
 using Microsoft.Extensions.Logging;
 using Plugin.Firebase.Crashlytics;
 using Microsoft.Maui.LifecycleEvents;
+using PCDUmapedis.Mobile.Views.Dashboard;
+using PCDUmapedis.Mobile.Views.Startup;
+using PCDUmapedis.Mobile.ViewModels.Startup;
+
+
 
 #if IOS
 using Plugin.Firebase.Bundled.Platforms.iOS;
@@ -26,8 +31,17 @@ namespace PCDUmapedis.Mobile
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            //Views
+            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<LoginView>();
+            builder.Services.AddTransient<InicioView>();
+
+            //View Models
+            builder.Services.AddTransient<LoginViewModel>();
+
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

@@ -1,4 +1,5 @@
-﻿using PropertyChanged;
+﻿using PCDUmapedis.Mobile.Views.Dashboard;
+using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,25 +21,26 @@ namespace PCDUmapedis.Mobile.ViewModels.Startup
         {
             get
             {
-                return new Command(() =>
+                return new Command(async () =>
                 {
-                    KLoginCommandAsync();
+                    await KLoginCommandAsync();
                 });
             }
         }
 
-        private void KLoginCommandAsync()
+        private async Task KLoginCommandAsync()
         {
             IsRunning = true;
 
-            if (Email != "jose@gmail.com")
+            if (Email != "jo")
             {
                 IsRunning = false;
-                App.Current?.MainPage?.DisplayAlert("Error", "En Usuario", "Ok");
+                //App.Current?.MainPage?.DisplayAlert("Error", "En Usuario", "Ok");
+                await Shell.Current.DisplayAlert("Error", "En Usuario", "Ok");
                 return;
             }
             IsRunning = false;
-            App.Current?.MainPage?.DisplayAlert("Bien", "En Usuario", "Ok");
+            await Shell.Current.GoToAsync($"//{nameof(InicioView)}");
         }
     }
 }
