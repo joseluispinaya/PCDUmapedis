@@ -22,6 +22,9 @@ namespace PCDUmapedis.Mobile.ViewModels
         }
         private async Task SalirCommandAsync()
         {
+            SecureStorage.Default.Remove(SettingsConst.Logi);
+            SecureStorage.Default.Remove(SettingsConst.Userl);
+
             await Shell.Current.GoToAsync($"//{nameof(LoginView)}");
         }
     }

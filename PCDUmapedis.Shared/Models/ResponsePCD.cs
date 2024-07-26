@@ -27,5 +27,9 @@ namespace PCDUmapedis.Shared.Models
         public string? Ciapoderado { get; set; }
         public string? Parentesco { get; set; }
         public string? Celular { get; set; }
+
+        public string PictureFullPath => string.IsNullOrEmpty(Foto)
+            ? "https://umapedis-001-site1.ftempurl.com/Imagenes/Sinfotop.jpg"
+            : $"https://umapedis-001-site1.ftempurl.com{Foto}";
     }
 }

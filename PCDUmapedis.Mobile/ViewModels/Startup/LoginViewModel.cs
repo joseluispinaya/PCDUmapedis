@@ -2,6 +2,7 @@
 using PCDUmapedis.Mobile.Views.Dashboard;
 using PCDUmapedis.Shared.DTOs;
 using PCDUmapedis.Shared.Models;
+using Newtonsoft.Json;
 using PropertyChanged;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using PCDUmapedis.Mobile.Views;
 
 namespace PCDUmapedis.Mobile.ViewModels.Startup
 {
@@ -49,20 +51,26 @@ namespace PCDUmapedis.Mobile.ViewModels.Startup
             };
 
             var httpResponse = await _repository.GetPersoN<ResponsePCD>(url, "api/pagobonos/Login", loginDTO);
-            IsRunning = false;
+            
 
             if (httpResponse.Error)
             {
+                IsRunning = false;
                 var message = await httpResponse.GetErrorMessageAsync();
                 await Shell.Current.DisplayAlert("Error", message, "Ok");
+                Password = string.Empty;
                 return;
             }
 
             await SecureStorage.Default.SetAsync(SettingsConst.Logi, "si");
 
             ResponsePCD responsePCD = httpResponse.Response;
-            //string userDetail = JsonConvert.SerializeObject(responsePCD);
+            string userDetail = JsonConvert.SerializeObject(responsePCD);
+            await SecureStorage.Default.SetAsync(SettingsConst.Userl, userDetail);
 
+            IsRunning = false;
+
+            AppShell.Current.FlyoutHeader = new FlyoutHeaderControl();
             await Shell.Current.GoToAsync($"//{nameof(InicioView)}");
 
             //if (Email != "jo")

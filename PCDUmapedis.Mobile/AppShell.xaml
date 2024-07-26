@@ -11,6 +11,11 @@
     Title="PCDUmapedis.Mobile">
 
     <ShellContent
+        FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate startPa:LoadPageView}"
+        Route="LoadPageView" />
+
+    <ShellContent
         Title="Login PCD" FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
         ContentTemplate="{DataTemplate startPa:LoginView}"
         Route="LoginView" />
