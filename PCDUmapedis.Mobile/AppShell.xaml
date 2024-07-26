@@ -6,26 +6,37 @@
     xmlns:local="clr-namespace:PCDUmapedis.Mobile"
     xmlns:startPa="clr-namespace:PCDUmapedis.Mobile.Views.Startup"
     xmlns:dashboardPages="clr-namespace:PCDUmapedis.Mobile.Views.Dashboard"
+    xmlns:moder="clr-namespace:PCDUmapedis.Mobile.Modei"
     Shell.TabBarIsVisible="False"
     Title="PCDUmapedis.Mobile">
 
     <ShellContent
-        Title="Login PCD" FlyoutItemIsVisible="False"
+        Title="Login PCD" FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
         ContentTemplate="{DataTemplate startPa:LoginView}"
         Route="LoginView" />
 
     <FlyoutItem Route="InicioView" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
-        Title="Inicio"
+        Title="Inicio" Icon="{x:Static moder:Icons.Dashboard}"
         ContentTemplate="{DataTemplate dashboardPages:InicioView}"/>
 
         <ShellContent
-        Title="Buscar"
+        Title="Buscar" Icon="{x:Static moder:Icons.ListaP}"
         ContentTemplate="{DataTemplate dashboardPages:InicioView}"/>
 
         <ShellContent
-        Title="Personal"
+        Title="Personal" Icon="{x:Static moder:Icons.ContactUs}"
+        ContentTemplate="{DataTemplate dashboardPages:InicioView}"/>
+
+        <ShellContent
+        Title="Mensajes" Icon="{x:Static moder:Icons.Moreico}"
         ContentTemplate="{DataTemplate dashboardPages:InicioView}"/>
     </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Text="Salir" Command="{Binding SalirCommand}" />
+        </StackLayout>
+    </Shell.FlyoutFooter>
 
 </Shell>

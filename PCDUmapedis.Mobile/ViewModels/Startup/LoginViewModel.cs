@@ -58,7 +58,10 @@ namespace PCDUmapedis.Mobile.ViewModels.Startup
                 return;
             }
 
+            await SecureStorage.Default.SetAsync(SettingsConst.Logi, "si");
+
             ResponsePCD responsePCD = httpResponse.Response;
+            //string userDetail = JsonConvert.SerializeObject(responsePCD);
 
             await Shell.Current.GoToAsync($"//{nameof(InicioView)}");
 

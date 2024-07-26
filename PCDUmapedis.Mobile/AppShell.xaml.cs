@@ -1,4 +1,5 @@
-﻿using PCDUmapedis.Mobile.Views.Dashboard;
+﻿using PCDUmapedis.Mobile.ViewModels;
+using PCDUmapedis.Mobile.Views.Dashboard;
 
 namespace PCDUmapedis.Mobile
 {
@@ -7,7 +8,7 @@ namespace PCDUmapedis.Mobile
         public AppShell()
         {
             InitializeComponent();
-
+            BindingContext = new AppShellViewModel();
             Routing.RegisterRoute(nameof(InicioView), typeof(InicioView));
         }
     }
