@@ -11,5 +11,7 @@ namespace PCDUmapedis.Mobile.Repositories
     {
         Task<HttpResponseWrapper<T>> GetPerso<T>(string urlBase, string url, T model);
         Task<HttpResponseWrapper<T>> GetPersoN<T>(string urlBase, string url, LoginDTO modeld);
+        Task<HttpResponseWrapper<T>> Get<T>(string urlBase, string url);
+        Task<HttpResponseWrapper<T>> GetPagosN<T>(string urlBase, string url, ConsultaDTO modelo);
     }
 }

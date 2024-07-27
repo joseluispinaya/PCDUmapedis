@@ -26,8 +26,8 @@
         ContentTemplate="{DataTemplate dashboardPages:InicioView}"/>
 
         <ShellContent
-        Title="Buscar" Icon="{x:Static moder:Icons.ListaP}"
-        ContentTemplate="{DataTemplate dashboardPages:InicioView}"/>
+        Title="Consulta Bono" Icon="{x:Static moder:Icons.ListaP}"
+        ContentTemplate="{DataTemplate dashboardPages:ConsultaBonoView}"/>
 
         <ShellContent
         Title="Personal" Icon="{x:Static moder:Icons.ContactUs}"

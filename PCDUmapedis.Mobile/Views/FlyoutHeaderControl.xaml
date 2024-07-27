@@ -4,7 +4,7 @@
              x:Class="PCDUmapedis.Mobile.Views.FlyoutHeaderControl"
              xmlns:Models="clr-namespace:PCDUmapedis.Mobile.ViewModels">
     <StackLayout Spacing="5">
-        <Image Source="imafondo.jpg" HeightRequest="150"/>
+        <Image Source="perfill.png" HeightRequest="150"/>
 
         <Grid Margin="0, -50, 0, 0">
             <Grid.ColumnDefinitions>

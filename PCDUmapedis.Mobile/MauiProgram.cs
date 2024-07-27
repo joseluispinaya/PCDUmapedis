@@ -9,7 +9,7 @@ using PCDUmapedis.Mobile.ViewModels.Startup;
 using PCDUmapedis.Mobile.Repositories;
 using PCDUmapedis.Mobile.Views;
 using PCDUmapedis.Mobile.ViewModels;
-
+using PCDUmapedis.Mobile.ViewModels.Dashboard;
 
 
 
@@ -43,12 +43,14 @@ namespace PCDUmapedis.Mobile
             builder.Services.AddTransient<LoginView>();
             builder.Services.AddTransient<InicioView>();
             builder.Services.AddTransient<LoadPageView>();
+            builder.Services.AddTransient<ConsultaBonoView>();
             builder.Services.AddTransient<FlyoutHeaderControl>();
-            //builder.Services.AddTransient<LoadPageView>();
+            
 
             //View Models
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<LoadingViewModel>();
+            builder.Services.AddTransient<ConsultaBonoViewModel>();
             builder.Services.AddTransient<FlyoutHeaderControlModel>();
 
 
