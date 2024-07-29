@@ -1,4 +1,5 @@
-﻿using PCDUmapedis.Mobile.Views;
+﻿using PCDUmapedis.Mobile.Modei;
+using PCDUmapedis.Mobile.Views;
 using PCDUmapedis.Mobile.Views.Dashboard;
 using PCDUmapedis.Mobile.Views.Startup;
 using System;
@@ -18,6 +19,7 @@ namespace PCDUmapedis.Mobile.ViewModels.Startup
 
         private async void CheckUserLoginDetails()
         {
+            //private async void CheckUserLoginDetails()
             var sesi = await SecureStorage.Default.GetAsync(SettingsConst.Logi);
             if (string.IsNullOrEmpty(sesi))
             {
@@ -25,8 +27,10 @@ namespace PCDUmapedis.Mobile.ViewModels.Startup
             }
             else
             {
-                AppShell.Current.FlyoutHeader = new FlyoutHeaderControl();
-                await Shell.Current.GoToAsync($"//{nameof(InicioView)}");
+                await AppConstant.AddFlyoutMenusDetails();
+
+                //AppShell.Current.FlyoutHeader = new FlyoutHeaderControl();
+                //await Shell.Current.GoToAsync($"//{nameof(InicioView)}");
             }
         }
     }

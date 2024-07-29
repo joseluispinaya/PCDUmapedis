@@ -35,6 +35,14 @@
             </Frame>
         </StackLayout>
 
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="18">
+            <Label Text="Es Funcionario?"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"
+                   FontSize="16"/>
+            <Switch IsToggled="{Binding IsToggled}"/>
+        </HorizontalStackLayout>
+
         <ActivityIndicator 
         HeightRequest="30" 
         IsRunning="{Binding IsRunning}"

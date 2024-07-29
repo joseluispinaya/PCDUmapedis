@@ -17,7 +17,8 @@ namespace PCDUmapedis.Mobile.ViewModels
             LoadPersonalAsync();
         }
 
-        public ResponsePCD? User { get; set; }
+        public UserBasicInfo? User { get; set; }
+        //public ResponsePCD? User { get; set; }
         public string? Email { get; set; }
 
         public string? Nombre { get; set; }
@@ -28,14 +29,27 @@ namespace PCDUmapedis.Mobile.ViewModels
         {
             await InicioAsync();
         }
-
+        //string.IsNullOrEmpty(use)
         private async Task InicioAsync()
         {
             var use = await SecureStorage.Default.GetAsync(SettingsConst.Userl);
-            User = JsonConvert.DeserializeObject<ResponsePCD>(use);
-            Nombre = User?.Nombres;
-            Email = User?.Apellidos;
-            Foto = User?.PictureFullPath;
+            if (!string.IsNullOrEmpty(use))
+            {
+                User = JsonConvert.DeserializeObject<UserBasicInfo>(use);
+                Nombre = User?.Nombre;
+                Email = User?.Apellido;
+                Foto = User?.PictureFullPath;
+            }
+            
         }
+
+        //private async Task InicioAsync()
+        //{
+        //    var use = await SecureStorage.Default.GetAsync(SettingsConst.Userl);
+        //    User = JsonConvert.DeserializeObject<ResponsePCD>(use);
+        //    Nombre = User?.Nombres;
+        //    Email = User?.Apellidos;
+        //    Foto = User?.PictureFullPath;
+        //}
     }
 }

@@ -56,6 +56,7 @@
 	  <None Remove="Resources\Images\logo1.png" />
 	  <None Remove="Resources\Images\more_icon.png" />
 	  <None Remove="Resources\Images\perfill.png" />
+	  <None Remove="Resources\Images\sinpcd.png" />
 	  <None Remove="Resources\Images\team.png" />
 	  <None Remove="Resources\Images\user.png" />
 	  <None Remove="Resources\Images\verr.png" />
@@ -90,6 +91,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Dashboard\ConsultaBonoView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Dashboard\InicioAdminView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Dashboard\InicioView.xaml">

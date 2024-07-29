@@ -9,7 +9,7 @@ namespace PCDUmapedis.Mobile
         {
             InitializeComponent();
             BindingContext = new AppShellViewModel();
-            Routing.RegisterRoute(nameof(InicioView), typeof(InicioView));
+            //Routing.RegisterRoute(nameof(InicioView), typeof(InicioView));
         }
     }
 }

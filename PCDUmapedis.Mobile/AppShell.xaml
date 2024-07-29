@@ -20,24 +20,6 @@
         ContentTemplate="{DataTemplate startPa:LoginView}"
         Route="LoginView" />
 
-    <FlyoutItem Route="InicioView" FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent
-        Title="Inicio" Icon="{x:Static moder:Icons.Dashboard}"
-        ContentTemplate="{DataTemplate dashboardPages:InicioView}"/>
-
-        <ShellContent
-        Title="Consulta Bono" Icon="{x:Static moder:Icons.ListaP}"
-        ContentTemplate="{DataTemplate dashboardPages:ConsultaBonoView}"/>
-
-        <ShellContent
-        Title="Personal" Icon="{x:Static moder:Icons.ContactUs}"
-        ContentTemplate="{DataTemplate dashboardPages:InicioView}"/>
-
-        <ShellContent
-        Title="Mensajes" Icon="{x:Static moder:Icons.Moreico}"
-        ContentTemplate="{DataTemplate dashboardPages:InicioView}"/>
-    </FlyoutItem>
-
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">
             <Button Text="Salir" Command="{Binding SalirCommand}" />

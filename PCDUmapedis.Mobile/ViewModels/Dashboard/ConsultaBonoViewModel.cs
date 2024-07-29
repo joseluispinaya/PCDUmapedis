@@ -70,7 +70,8 @@ namespace PCDUmapedis.Mobile.ViewModels.Dashboard
                 return;
             }
 
-            var pcd = JsonConvert.DeserializeObject<ResponsePCD>(use);
+            var pcd = JsonConvert.DeserializeObject<UserBasicInfo>(use);
+            //var pcd = JsonConvert.DeserializeObject<ResponsePCD>(use);
             if (pcd == null)
             {
                 await Shell.Current.DisplayAlert("Error", "Ocurrio un error Inicie sesion", "Ok");
@@ -81,10 +82,10 @@ namespace PCDUmapedis.Mobile.ViewModels.Dashboard
 
             ConsultaDTO consultaDTO = new ConsultaDTO
             {
-                Idpersodisca = pcd.Idpersodisca,
+                Idpersodisca = pcd.IdUsuaLog,
                 Idges = Gestion.Idges
             };
-            //var responseHttp = await _repository.Get<List<EGestion>>(url, "api/gestiones/combo");
+            //Idpersodisca = pcd.Idpersodisca,
             var responseHttp = await _repository.GetPagosN<List<ResponseConsultaB>>(url, "api/pagobonos/Consulta", consultaDTO);
 
             if (responseHttp.Error)
