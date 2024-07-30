@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PCDUmapedis.Mobile.Views.Dashboard.BuscarView"
-             Title="BuscarView"
+             xmlns:Models="clr-namespace:PCDUmapedis.Mobile.ViewModels.Dashboard"
+             Title="Buscar PCD"
              BackgroundColor="#100F1F">
     <Grid RowDefinitions="Auto, Auto, *">
         <Border StrokeShape="RoundRectangle 0, 0, 30, 30"
@@ -23,7 +24,7 @@
                         <Ellipse/>
                     </Border.StrokeShape>
                     <Image
-                    Source="sinpcd.png" />
+                    Source="{Binding Foto}" />
                 </Border>
             </Grid>
 
@@ -33,11 +34,21 @@
             <Grid ColumnDefinitions="*, Auto" Margin="10, 8">
                 <Frame HeightRequest="45"
                        CornerRadius="50" Margin="10" Padding="0" BackgroundColor="#EFF6FF">
-                    <Entry Margin="6,0" VerticalOptions="Center" Placeholder="Ingrese CI" />
+                    <Entry Margin="6,0" VerticalOptions="Center" 
+                           Placeholder="Ingrese CI" TextColor="Black" Text="{Binding Cedula}" />
                 </Frame>
 
-                <Button Grid.Column="1" FontAttributes="Bold"  Text="Buscar pcd" CornerRadius="20" Margin="10, 0, 0, 0" HeightRequest="45"/>
+                <Button Grid.Column="1" 
+                        Command="{Binding BuscarCommand}"
+                        FontAttributes="Bold" 
+                        Text="Buscar pcd" 
+                        CornerRadius="20" Margin="10, 0, 0, 0" HeightRequest="45"/>
             </Grid>
+
+            <ActivityIndicator 
+                HeightRequest="30" 
+                IsRunning="{Binding IsRunning}"
+                IsVisible="{Binding IsRunning}"/>
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="2" Margin="20">
@@ -49,19 +60,75 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <Label Grid.Column="0" Grid.Row="0" Text="Detalle de Pcd" FontSize="18" TextColor="#EFF6FF" />
+                <Label Grid.Column="0" Grid.Row="0" 
+                       Text="Nombre PCD:" 
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       Margin="0, 0, 0, 8"
+                       TextColor="#EFF6FF" />
+                <Label Grid.Column="1" Grid.Row="0" Text="{Binding Persona.FullName}" FontSize="16" Margin="20, 0, 0, 8" TextColor="#EFF6FF" />
 
-                <BoxView Grid.Column="1" Grid.Row="0" HeightRequest="2"
-        Color="#9497A8" VerticalOptions="End"
-        Margin="20, 5, 0, 5"/>
 
-                <Label Grid.Column="0" Grid.Row="1" Text="Detalle de otro" FontSize="18" TextColor="#EFF6FF" />
+                <Label Grid.Column="0" Grid.Row="1" 
+                       Text="Nro Cred:" 
+                       FontAttributes="Bold"
+                       FontSize="18" 
+                       Margin="0, 0, 0, 8"
+                       TextColor="#EFF6FF" />
+                <Label Grid.Column="1" Grid.Row="1" Text="{Binding Persona.Codcarnetdisca}" FontSize="16" Margin="20, 0, 0, 8" TextColor="#EFF6FF" />
 
-                <BoxView Grid.Column="1" Grid.Row="1" HeightRequest="2"
-        Color="#9497A8" VerticalOptions="End"
-        Margin="20, 5, 0, 5"/>
+
+                <Label Grid.Column="0" Grid.Row="2" 
+                       Text="Asociacion:" 
+                       FontAttributes="Bold"
+                       FontSize="18" 
+                       Margin="0, 0, 0, 8"
+                       TextColor="#EFF6FF" />
+                <Label Grid.Column="1" Grid.Row="2" Text="{Binding Persona.DescripcionAso}" FontSize="16" Margin="20, 0, 0, 8" TextColor="#EFF6FF" />
+
+                
+                <Label Grid.Column="0" Grid.Row="3" 
+                       Text="Discapacidad:" 
+                       FontAttributes="Bold"
+                       FontSize="18" 
+                       Margin="0, 0, 0, 8"
+                       TextColor="#EFF6FF" />
+                <Label Grid.Column="1" Grid.Row="3" Text="{Binding Persona.DescripcionTipo}" FontSize="16" Margin="20, 0, 0, 8" TextColor="#EFF6FF" />
+
+                
+                <Label Grid.Column="0" Grid.Row="4" 
+                       Text="Datos Tutor:" 
+                       FontSize="18" 
+                       Margin="0, 10, 0, 15"
+                       TextColor="#EFF6FF" />
+                <BoxView Grid.Column="1" Grid.Row="4" HeightRequest="2"
+                Color="#9497A8" VerticalOptions="End"
+                Margin="20, 10, 0, 15"/>
+
+
+                <Label Grid.Column="0" Grid.Row="5" 
+                       Text="Nombre:" 
+                       FontAttributes="Bold"
+                       FontSize="18" 
+                       Margin="0, 5, 0, 8"
+                       TextColor="#EFF6FF" />
+                <Label Grid.Column="1" Grid.Row="5" Text="{Binding Persona.NombresTu}" FontSize="16" Margin="20, 5, 0, 8" TextColor="#EFF6FF" />
+
+
+                <Label Grid.Column="0" Grid.Row="6" 
+                       Text="Parentesco:" 
+                       FontAttributes="Bold"
+                       FontSize="18" 
+                       Margin="0, 0, 0, 8"
+                       TextColor="#EFF6FF" />
+                <Label Grid.Column="1" Grid.Row="6" Text="{Binding Persona.Parentesco}" FontSize="16" Margin="20, 0, 0, 8" TextColor="#EFF6FF" />
             </Grid>
         </VerticalStackLayout>
     </Grid>

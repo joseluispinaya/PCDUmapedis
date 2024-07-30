@@ -31,5 +31,7 @@ namespace PCDUmapedis.Shared.Models
         public string PictureFullPath => string.IsNullOrEmpty(Foto)
             ? "https://umapedis-001-site1.ftempurl.com/Imagenes/Sinfotop.jpg"
             : $"https://umapedis-001-site1.ftempurl.com{Foto}";
+
+        public string FullName => $"{Nombres} {Apellidos}";
     }
 }

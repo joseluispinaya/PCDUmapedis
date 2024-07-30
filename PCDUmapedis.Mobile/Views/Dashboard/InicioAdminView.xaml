@@ -2,21 +2,82 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PCDUmapedis.Mobile.Views.Dashboard.InicioAdminView"
-             Title="InicioAdminView">
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+             Title="Panel de Inicio"
+             BackgroundColor="#100F1F">
+    
+    <VerticalStackLayout>
+        <Grid RowDefinitions="*, 2*">
+            <Border StrokeShape="RoundRectangle 0, 0, 30, 30"
+            Opacity="0.6" BackgroundColor="#100F1F"
+            StrokeThickness="0">
+                <Image Source="perfill.png" Aspect="AspectFill"/>
+            </Border>
 
-            <Label
-                Text="Hello, World!"
-                FontSize="32"
-                HorizontalOptions="Center" />
-        </VerticalStackLayout>
-    </ScrollView>
+            <Grid Margin="10, 0, 0, 10" VerticalOptions="End">
+                <ImageButton Source="logo1.png" WidthRequest="80" HeightRequest="80"
+                             HorizontalOptions="Start"/>
+            </Grid>
+
+            <VerticalStackLayout Grid.Row="1" Margin="20">
+                <Grid ColumnDefinitions="Auto, *">
+                    <Label Text="Actividades" TextColor="#EFF6FF"
+                    FontSize="20"/>
+
+                    <Button Grid.Column="1" 
+                    FontAttributes="Bold" 
+                    Text="Ver SMS" 
+                    CornerRadius="20" Margin="20, 0, 0, 5" HeightRequest="40"/>
+                </Grid>
+
+                <HorizontalStackLayout>
+                    <VerticalStackLayout HorizontalOptions="Start" Margin="0, 25"
+                             Spacing="5">
+                        <Frame WidthRequest="100" HeightRequest="100"
+                   CornerRadius="15" Padding="0">
+                            <Grid>
+                                <Image Source="act1.jpg" Aspect="AspectFill"/>
+                            </Grid>
+                        </Frame>
+
+                        <Label Text="Dia PCD" TextColor="#EFF6FF"
+                    FontSize="14"/>
+
+                        <Label Text="25/02/24" TextColor="#EFF6FF"
+                    FontSize="14"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout HorizontalOptions="Start" Margin="10, 25"
+                                     Spacing="5">
+                        <Frame WidthRequest="100" HeightRequest="100"
+                           CornerRadius="15" Padding="0">
+                            <Grid>
+                                <Image Source="act1.jpg" Aspect="AspectFill"/>
+                            </Grid>
+                        </Frame>
+
+                        <Label Text="Dia PCD" TextColor="#EFF6FF"
+                           FontSize="14"/>
+                        <Label Text="25/02/24" TextColor="#EFF6FF"
+                            FontSize="14"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout HorizontalOptions="Start" Margin="0, 25"
+                                     Spacing="5">
+                        <Frame WidthRequest="100" HeightRequest="100"
+                           CornerRadius="15" Padding="0">
+                            <Grid>
+                                <Image Source="act1.jpg" Aspect="AspectFill"/>
+                            </Grid>
+                        </Frame>
+
+                        <Label Text="Dia PCD" TextColor="#EFF6FF"
+                           FontSize="14"/>
+
+                        <Label Text="25/02/24" TextColor="#EFF6FF"
+                           FontSize="14"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Grid>
+    </VerticalStackLayout>
 </ContentPage>

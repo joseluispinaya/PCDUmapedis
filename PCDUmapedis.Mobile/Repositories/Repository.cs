@@ -91,5 +91,22 @@ namespace PCDUmapedis.Mobile.Repositories
             }
             return new HttpResponseWrapper<T>(default, true, responseHttp);
         }
+
+        public async Task<HttpResponseWrapper<T>> GetPcd<T>(string ci, string urlBase, string servicePrefix, string controller)
+        {
+            HttpClient client = new HttpClient
+            {
+                BaseAddress = new Uri(urlBase),
+            };
+            string url = $"{servicePrefix}{controller}/{ci}";
+            var responseHttp = await client.GetAsync(url);
+
+            if (responseHttp.IsSuccessStatusCode)
+            {
+                var response = await UnserializeAnswer<T>(responseHttp, _jsonDefaultOptions);
+                return new HttpResponseWrapper<T>(response, false, responseHttp);
+            }
+            return new HttpResponseWrapper<T>(default, true, responseHttp);
+        }
     }
 }
