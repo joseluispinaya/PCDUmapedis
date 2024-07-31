@@ -45,6 +45,7 @@ namespace PCDUmapedis.Mobile
             builder.Services.AddTransient<LoadPageView>();
             builder.Services.AddTransient<ConsultaBonoView>();
             builder.Services.AddTransient<BuscarView>();
+            builder.Services.AddTransient<InicioAdminView>();
             builder.Services.AddTransient<FlyoutHeaderControl>();
             
 
@@ -53,6 +54,7 @@ namespace PCDUmapedis.Mobile
             builder.Services.AddTransient<LoadingViewModel>();
             builder.Services.AddTransient<ConsultaBonoViewModel>();
             builder.Services.AddTransient<BuscarViewModel>();
+            builder.Services.AddTransient<InicioAdminViewModel>();
             builder.Services.AddTransient<FlyoutHeaderControlModel>();
 
 
