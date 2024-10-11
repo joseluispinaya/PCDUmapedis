@@ -22,7 +22,7 @@
                 <Image Source="user.png" HeightRequest="20" WidthRequest="20" />
             </Frame>
             <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
-                <Entry Text="{Binding Email}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="User Name" Keyboard="Email" />
+                <Entry Text="{Binding Email}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Correo o C.I." Keyboard="Email" />
             </Frame>
         </StackLayout>
 
@@ -31,16 +31,17 @@
                 <Image Source="lock.png" HeightRequest="20" WidthRequest="20" />
             </Frame>
             <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
-                <Entry Text="{Binding Password}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Password" IsPassword="True" />
+                <Entry Text="{Binding Password}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Clave o Nro Credencial" IsPassword="True" />
             </Frame>
         </StackLayout>
 
         <HorizontalStackLayout HorizontalOptions="Center" Spacing="18">
+            <Switch IsToggled="{Binding IsToggled}"/>
             <Label Text="Es Funcionario?"
                    FontAttributes="Bold"
                    VerticalOptions="Center"
                    FontSize="16"/>
-            <Switch IsToggled="{Binding IsToggled}"/>
+            
         </HorizontalStackLayout>
 
         <ActivityIndicator 
@@ -48,7 +49,7 @@
         IsRunning="{Binding IsRunning}"
         IsVisible="{Binding IsRunning}"/>
 
-        <Button Text="Iniciar Cuenta" CornerRadius="20" HorizontalOptions="Center" Command="{Binding LoginCommand}" />
+        <Button Text="Iniciar Sesion" CornerRadius="20" HorizontalOptions="Center" Command="{Binding LoginCommand}" />
         
     </VerticalStackLayout>
 </ContentPage>

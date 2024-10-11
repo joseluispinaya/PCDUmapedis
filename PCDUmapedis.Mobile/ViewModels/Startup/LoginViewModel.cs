@@ -102,18 +102,35 @@ namespace PCDUmapedis.Mobile.ViewModels.Startup
 
         private Task<UserBasicInfo?> MetodoPcdIa()
         {
-            var loginDTO = new LoginDTO { Ciperso = "123456", Codcarnetdisca = "111213" };
+            
+
+            //Email
+            //Password
+            //var loginDTO = new LoginDTO { Ciperso = "123456", Codcarnetdisca = "111213" };
+            var loginDTO = new LoginDTO { Ciperso = Email!, Codcarnetdisca = Password! };
             return LoginAsync<ResponsePCD>("api/pagobonos/Login", loginDTO);
         }
 
         private Task<UserBasicInfo?> MetodoAdminIa()
         {
-            var loginDTO = new LoginDTO { Ciperso = "manuel@yopmail.com", Codcarnetdisca = "aedf44" };
+            //var loginDTO = new LoginDTO { Ciperso = "manuel@yopmail.com", Codcarnetdisca = "aedf44" };
+            var loginDTO = new LoginDTO { Ciperso = Email!, Codcarnetdisca = Password! };
             return LoginAsync<ResponseUsua>("api/pagobonos/Loginusua", loginDTO);
         }
 
         private async Task KLoginCommandAsyncIa()
         {
+            if (string.IsNullOrEmpty(Email))
+            {
+                await Shell.Current.DisplayAlert("Error", "Ingrese un Correo o Nro CI", "Ok");
+                return;
+            }
+            if (string.IsNullOrEmpty(Password))
+            {
+                await Shell.Current.DisplayAlert("Error", "Ingrese una Contraseña o Nro Credencial", "Ok");
+                return;
+            }
+
             UserBasicInfo? userBasicInfo;
 
             if (!IsToggled)

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PCDUmapedis.Mobile.Views.Dashboard.InicioAdminView"
              xmlns:Models="clr-namespace:PCDUmapedis.Mobile.ViewModels.Dashboard"
-             Title="Panel de Inicio"
+             Title="Administrador"
              BackgroundColor="#100F1F">
 
     <AbsoluteLayout>
@@ -29,7 +29,7 @@
                         <Button Grid.Column="1" 
                         Command="{Binding BuscaraCommand}"
                 FontAttributes="Bold" 
-                Text="Ver SMS" 
+                Text="Recargar" 
                 CornerRadius="20" Margin="20, 0, 0, 5" HeightRequest="40"/>
                     </Grid>
 

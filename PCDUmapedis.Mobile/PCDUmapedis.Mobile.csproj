@@ -11,7 +11,7 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>PCDUmapedis.Mobile</ApplicationTitle>
+		<ApplicationTitle>PCDUmapedis</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.pcdumapedis.mobile</ApplicationId>
@@ -25,7 +25,8 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		
+		<MauiIcon Include="Resources\AppIcon\iconoper.png" Color="#E9E7E7" ForegroundScale="0.50" />
 		
 
 		<!-- Splash Screen -->
@@ -45,6 +46,7 @@
 	<ItemGroup>
 	  <None Remove="google-services.json" />
 	  <None Remove="Platforms\Android\Resources\values\strings.xml" />
+	  <None Remove="Resources\AppIcon\iconoper.png" />
 	  <None Remove="Resources\Images\about_us.png" />
 	  <None Remove="Resources\Images\act1.jpg" />
 	  <None Remove="Resources\Images\appbono.jpg" />

@@ -39,6 +39,7 @@ namespace PCDUmapedis.Mobile
 
             builder.Services.AddSingleton<IRepository, Repository>();
             //Views
+            //builder.Services.AddTransient<MastenodeJS>();
             builder.Services.AddTransient<MainPage>();
             builder.Services.AddTransient<LoginView>();
             builder.Services.AddTransient<InicioView>();
